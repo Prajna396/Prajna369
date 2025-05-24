@@ -1,0 +1,66 @@
+body{
+    font-family:'Ariel,sans-serif';
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+header{
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    font-weight:bold;
+}
+h1{
+    margin: 0;
+    font-size: 2.5rem;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.intro{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.card {
+    flex:300px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 15px;
+}
+.button {
+    display: inline-block;
+    background-color:orange;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    margin-top:10px;
+    border:none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.button:hover {
+    background-color: darkorange;
+}
