@@ -1,10 +1,7 @@
-// Contact Form Validation
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     resetErrors();
-
     let isValid = true;
-
     const name = document.getElementById('name').value.trim();
     if (name === '') {
         showError('nameError', 'Name is required');
@@ -13,7 +10,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         showError('nameError', 'Name should contain only letters');
         isValid = false;
     }
-
     const email = document.getElementById('email').value.trim();
     if (email === '') {
         showError('emailError', 'Email is required');
@@ -22,33 +18,26 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         showError('emailError', 'Please enter a valid email address');
         isValid = false;
     }
-
     const phone = document.getElementById('phone').value.trim();
     if (phone !== '' && !isValidPhone(phone)) {
         showError('phoneError', 'Please enter a valid phone number');
         isValid = false;
     }
-
     const message = document.getElementById('message').value.trim();
     if (message === '') {
         showError('messageError', 'Message is required');
         isValid = false;
     }
-
     if (isValid) {
         alert('Form submitted successfully!');
         document.getElementById('contactForm').reset();
     }
 });
-
-// Show error
 function showError(elementId, message) {
     const errorElement = document.getElementById(elementId);
     errorElement.textContent = message;
     errorElement.style.display = 'block';
 }
-
-// Reset error messages
 function resetErrors() {
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(error => {
@@ -56,24 +45,18 @@ function resetErrors() {
         error.style.display = 'none';
     });
 }
-
-// Validation helpers
 function isValidEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
-
 function isValidPhone(phone) {
     const phonePattern = /^[\d\s\-+()]{10,}$/;
     return phonePattern.test(phone);
 }
-
 function isValidName(name) {
     const namePattern = /^[a-zA-Z\s]+$/;
     return namePattern.test(name);
 }
-
-// To-Do List
 document.getElementById('addTodo').addEventListener('click', addTodo);
 document.getElementById('todoInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
@@ -81,7 +64,6 @@ document.getElementById('todoInput').addEventListener('keypress', function(event
         addTodo();
     }
 });
-
 function addTodo() {
     const input = document.getElementById('todoInput');
     const task = input.value.trim();
@@ -92,10 +74,8 @@ function addTodo() {
             <span>${task}</span>
             <button class="delete-btn">Delete</button>
         `;
-
         document.getElementById('todoList').appendChild(li);
         input.value = '';
-
         li.querySelector('.delete-btn').addEventListener('click', function () {
             li.remove();
         });
